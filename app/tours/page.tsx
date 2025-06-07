@@ -289,9 +289,9 @@ export default function ToursPage() {
                     </div>
                   </div>
 
-                  <Link href="/contact">
+                  <Link href={`/tours/${tour.id}`}>
                     <Button className="w-full bg-gradient-to-r from-yellow-400 to-red-600 hover:from-yellow-500 hover:to-red-700 text-black hover:text-white font-semibold group/btn">
-                      Book Now
+                      View Details
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </Link>
