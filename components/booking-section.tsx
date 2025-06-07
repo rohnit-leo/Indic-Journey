@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Calendar, Users, MapPin, Shield, Clock } from "lucide-react"
+import { Calendar } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 export function BookingSection() {
@@ -39,9 +39,9 @@ export function BookingSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-1 gap-6 max-w-6xl mx-auto">
           {/* Booking Form */}
-          <div className="lg:col-span-2">
+          <div>
             <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-sm">
               <CardHeader className="bg-gradient-to-r from-black to-gray-800 text-white rounded-t-lg">
                 <CardTitle className="text-xl font-bold font-['Poppins'] flex items-center">
@@ -159,89 +159,9 @@ export function BookingSection() {
 
                 <div className="pt-4">
                   <Button className="w-full h-12 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white text-base font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                    Enquiry Now
+                    Send Query
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Booking Benefits */}
-          <div className="space-y-5">
-            <Card className="shadow-xl border-0 bg-gradient-to-br from-yellow-400 to-yellow-500 text-black">
-              <CardContent className="p-5">
-                <h3 className="text-xl font-bold mb-3 font-['Poppins']">Why Book With Us?</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Shield className="h-5 w-5 text-black" />
-                    <span className="font-semibold">100% Secure Booking</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Clock className="h-5 w-5 text-black" />
-                    <span className="font-semibold">24/7 Customer Support</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-black" />
-                    <span className="font-semibold">Local Expert Guides</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Users className="h-5 w-5 text-black" />
-                    <span className="font-semibold">Small Group Sizes</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Popular Tours Quick Select */}
-            <Card className="shadow-xl border-0">
-              <CardHeader>
-                <CardTitle className="text-lg font-bold font-['Poppins']">Recent Blogs</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {[
-                  {
-                    id: "golden-triangle-guide",
-                    title: "Complete Golden Triangle Guide",
-                    excerpt: "Everything you need to know about Delhi, Agra, and Jaipur",
-                    readTime: "5 min read",
-                    date: "Dec 15, 2024",
-                  },
-                  {
-                    id: "kerala-monsoon",
-                    title: "Kerala During Monsoon Season",
-                    excerpt: "Why monsoon is the best time to visit God's Own Country",
-                    readTime: "4 min read",
-                    date: "Dec 12, 2024",
-                  },
-                  {
-                    id: "ladakh-preparation",
-                    title: "Preparing for Ladakh Adventure",
-                    excerpt: "Essential tips for high-altitude trekking and travel",
-                    readTime: "6 min read",
-                    date: "Dec 10, 2024",
-                  },
-                  {
-                    id: "rajasthan-culture",
-                    title: "Royal Culture of Rajasthan",
-                    excerpt: "Exploring the rich heritage and traditions",
-                    readTime: "7 min read",
-                    date: "Dec 8, 2024",
-                  },
-                ].map((blog) => (
-                  <div
-                    key={blog.id}
-                    className="p-3 rounded-lg border-2 cursor-pointer transition-all duration-300 border-gray-200 hover:border-yellow-300 hover:bg-yellow-25"
-                  >
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-black text-sm line-clamp-1">{blog.title}</h4>
-                      <p className="text-xs text-gray-600 line-clamp-2">{blog.excerpt}</p>
-                      <div className="flex justify-between items-center">
-                        <span className="text-xs text-gray-500">{blog.readTime}</span>
-                        <span className="text-xs text-red-600 font-medium">{blog.date}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
               </CardContent>
             </Card>
           </div>

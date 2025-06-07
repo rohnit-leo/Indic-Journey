@@ -111,29 +111,24 @@ export default function FixedDeparturesPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src="/images/taj-mahal.png" alt="Fixed Departures" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-20 bg-gradient-to-r from-yellow-400 to-red-600">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-poppins text-white">
-              Fixed <span className="text-yellow-400">Departures</span>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-poppins text-black">
+              Fixed <span className="text-white">Departures</span>
             </h1>
-            <p className="text-xl text-white mb-8 font-open-sans">
+            <p className="text-xl text-black/80 mb-8 font-open-sans">
               Join our scheduled group tours with guaranteed departures. Perfect for solo travelers and those who prefer
               the company of fellow explorers.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/fixed-departures/domestic">
-                <Badge className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 text-lg cursor-pointer">
+                <Badge className="bg-black hover:bg-gray-800 text-white px-6 py-3 text-lg cursor-pointer">
                   Domestic Tours
                 </Badge>
               </Link>
               <Link href="/fixed-departures/international">
-                <Badge className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-lg cursor-pointer">
+                <Badge className="bg-white hover:bg-gray-100 text-black px-6 py-3 text-lg cursor-pointer">
                   International Tours
                 </Badge>
               </Link>
@@ -266,9 +261,9 @@ export default function FixedDeparturesPage() {
                     </div>
                   </div>
 
-                  <Link href={`/fixed-departures/${tour.type}/${tour.id}`}>
+                  <Link href={`/contact`}>
                     <Button className="w-full bg-gradient-to-r from-yellow-400 to-red-600 hover:from-yellow-500 hover:to-red-700 text-black hover:text-white font-semibold group/btn">
-                      View Details
+                      Book Now
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </Link>

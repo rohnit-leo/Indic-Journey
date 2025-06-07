@@ -81,28 +81,23 @@ export default function InternationalFixedDeparturesPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src="/images/europe-tour.png" alt="International Tours" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-20 bg-gradient-to-r from-yellow-400 to-red-600">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-poppins text-white">
-              International <span className="text-yellow-400">Fixed Departures</span>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-poppins text-black">
+              International <span className="text-white">Fixed Departures</span>
             </h1>
-            <p className="text-xl text-white mb-8 font-open-sans">
+            <p className="text-xl text-black/80 mb-8 font-open-sans">
               Explore the world beyond borders with our carefully curated international tours. From the romantic cities
               of Europe to the vibrant cultures of Southeast Asia, discover the world with confidence.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Badge className="bg-yellow-400 text-black px-6 py-3 text-lg">
+              <Badge className="bg-black text-white px-6 py-3 text-lg">
                 <Plane className="mr-2 h-4 w-4" />
                 Flights Included
               </Badge>
-              <Badge className="bg-red-600 text-white px-6 py-3 text-lg">Visa Assistance</Badge>
-              <Badge className="bg-yellow-400 text-black px-6 py-3 text-lg">Expert Guides</Badge>
+              <Badge className="bg-white text-black px-6 py-3 text-lg">Visa Assistance</Badge>
+              <Badge className="bg-black text-white px-6 py-3 text-lg">Expert Guides</Badge>
             </div>
           </div>
         </div>
@@ -207,7 +202,7 @@ export default function InternationalFixedDeparturesPage() {
                     </div>
                   </div>
 
-                  <Link href={`/fixed-departures/international/${tour.id}`}>
+                  <Link href="/contact">
                     <Button className="w-full bg-gradient-to-r from-yellow-400 to-red-600 hover:from-yellow-500 hover:to-red-700 text-black hover:text-white font-semibold group/btn">
                       Book Now
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
