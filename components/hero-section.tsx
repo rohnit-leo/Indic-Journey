@@ -5,43 +5,43 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Star, Users, Award, MapPin } from "lucide-react"
+import { useWebsiteContent } from "@/lib/website-content-store"
 
 export function HeroSection() {
+  const { hero, loadFromServer, isLoading } = useWebsiteContent()
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [initialized, setInitialized] = useState(false)
 
-  const heroSlides = [
-    {
-      title: "Explore. Experience. Evolve.",
-      subtitle: "Crafted Travel Stories across India & the World",
-      image: "/images/taj-mahal.png",
-      accent: "Discover Hidden Gems",
-      location: "Taj Mahal, Agra",
-      link: "/tours/golden-triangle",
-    },
-    {
-      title: "Spiritual Journeys Await",
-      subtitle: "Connect with Ancient Wisdom & Sacred Places",
-      image: "/images/varanasi-ganga.png",
-      accent: "Find Inner Peace",
-      location: "Varanasi, Uttar Pradesh",
-      link: "/tours/spiritual-varanasi",
-    },
-    {
-      title: "Adventure & Mountains",
-      subtitle: "Conquer the Highest Peaks & Scenic Landscapes",
-      image: "/images/ladakh-mountains.png",
-      accent: "Live the Adventure",
-      location: "Ladakh, Jammu & Kashmir",
-      link: "/tours/ladakh-adventure",
-    },
-  ]
+  const heroSlides = hero.slides
 
   useEffect(() => {
+    const initializeData = async () => {
+      if (!initialized) {
+        await loadFromServer()
+        setInitialized(true)
+      }
+    }
+
+    initializeData()
+
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+      if (heroSlides.length > 0) {
+        setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+      }
     }, 6000)
+
     return () => clearInterval(timer)
-  }, [])
+  }, [heroSlides, loadFromServer, initialized])
+
+  if (isLoading || heroSlides.length === 0) {
+    return (
+      <div className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-400 to-red-600">
+        <div className="text-white text-center">
+          <div className="animate-pulse">Loading...</div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">

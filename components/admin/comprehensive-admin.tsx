@@ -118,13 +118,14 @@ export function ComprehensiveAdmin() {
     { title: "Customers", value: "856", change: "+15%", icon: Users },
   ]
 
-  const updateSlide = (index: number, field: string, value: string) => {
+  const updateSlide = async (index: number, field: string, value: string) => {
     const newSlides = [...websiteContent.hero.slides]
     newSlides[index] = { ...newSlides[index], [field]: value }
     websiteContent.updateHeroSlides(newSlides)
+    await websiteContent.saveToServer()
   }
 
-  const addNewSlide = () => {
+  const addNewSlide = async () => {
     const newSlide = {
       title: "New Slide Title",
       subtitle: "New slide subtitle",
@@ -134,11 +135,13 @@ export function ComprehensiveAdmin() {
       link: "/tours/new",
     }
     websiteContent.updateHeroSlides([...websiteContent.hero.slides, newSlide])
+    await websiteContent.saveToServer()
   }
 
-  const deleteSlide = (index: number) => {
+  const deleteSlide = async (index: number) => {
     const newSlides = websiteContent.hero.slides.filter((_, i) => i !== index)
     websiteContent.updateHeroSlides(newSlides)
+    await websiteContent.saveToServer()
   }
 
   const updateTestimonial = (index: number, field: string, value: any) => {
@@ -178,11 +181,11 @@ export function ComprehensiveAdmin() {
           const newSlides = [...websiteContent.hero.slides]
           newSlides[index] = { ...newSlides[index], image: imageUrl }
           websiteContent.updateHeroSlides(newSlides)
-        } else if (section === "tour") {
+        } else if (section === "tour" && typeof index === "number") {
           const newTours = [...websiteContent.featuredJourneys.tours]
           newTours[index] = { ...newTours[index], image: imageUrl }
           websiteContent.updateFeaturedTours(newTours)
-        } else if (section === "blog") {
+        } else if (section === "blog" && typeof index === "number") {
           const newPosts = [...websiteContent.blog.posts]
           newPosts[index] = { ...newPosts[index], image: imageUrl }
           websiteContent.updateBlogPosts(newPosts)

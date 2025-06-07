@@ -85,18 +85,80 @@ interface WebsiteContentState {
       duration: string
     }>
   }
-
   // Actions
   updateHeroSlides: (slides: HeroSlide[]) => void
   updateFeaturedTours: (tours: Tour[]) => void
   updateTestimonials: (testimonials: Testimonial[]) => void
   updateBlogPosts: (posts: BlogPost[]) => void
   updateSectionContent: (section: string, content: any) => void
+  addFeaturedTour: (tour: Tour) => void
+  removeFeaturedTour: (tourId: string) => void
+  addBlogPost: (post: BlogPost) => void
+  removeBlogPost: (postId: number) => void
+  addTestimonial: (testimonial: Testimonial) => void
+  removeTestimonial: (index: number) => void
+  saveToServer: () => Promise<boolean>
+  loadFromServer: () => Promise<boolean>
+  isLoading: boolean
+  isSaving: boolean
+  lastSaved: string | null
 }
+
+// Define initialState
+const initialState: WebsiteContentState = {
+  hero: {
+    slides: [],
+  },
+  featuredJourneys: {
+    title: "",
+    subtitle: "",
+    tours: [],
+  },
+  testimonials: {
+    title: "",
+    subtitle: "",
+    testimonials: [],
+    stats: {
+      rating: "",
+      travelers: "",
+    },
+  },
+  blog: {
+    title: "",
+    subtitle: "",
+    posts: [],
+  },
+  booking: {
+    title: "",
+    subtitle: "",
+    ctaText: "",
+    popularTours: [],
+  },
+  updateHeroSlides: () => {},
+  updateFeaturedTours: () => {},
+  updateTestimonials: () => {},
+  updateBlogPosts: () => {},
+  updateSectionContent: () => {},
+  addFeaturedTour: () => {},
+  removeFeaturedTour: () => {},
+  addBlogPost: () => {},
+  removeBlogPost: () => {},
+  addTestimonial: () => {},
+  removeTestimonial: () => {},
+  saveToServer: async () => false,
+  loadFromServer: async () => false,
+  isLoading: false,
+  isSaving: false,
+  lastSaved: null,
+};
+
+// Add a helper function to get the base URL
+const getBaseUrl = () => process.env.NEXT_PUBLIC_API_BASE_URL || '';
 
 export const useWebsiteContent = create<WebsiteContentState>()(
   persist(
     (set, get) => ({
+      ...initialState,
       hero: {
         slides: [
           {
@@ -309,9 +371,11 @@ export const useWebsiteContent = create<WebsiteContentState>()(
           { id: "ladakh", name: "Ladakh Adventure", price: "₹35,000", duration: "8 Days" },
           { id: "rajasthan", name: "Royal Rajasthan", price: "₹30,000", duration: "10 Days" },
         ],
-      },
+      },      // Actions
+      isLoading: false,
+      isSaving: false,
+      lastSaved: null,
 
-      // Actions
       updateHeroSlides: (slides) =>
         set((state) => ({
           ...state,
@@ -339,11 +403,155 @@ export const useWebsiteContent = create<WebsiteContentState>()(
       updateSectionContent: (section, content) =>
         set((state) => ({
           ...state,
-          [section]: { ...state[section as keyof typeof state], ...content },
+          [section]: content,
         })),
+        
+      addFeaturedTour: (tour) =>
+        set((state) => ({
+          ...state,
+          featuredJourneys: {
+            ...state.featuredJourneys,
+            tours: [...state.featuredJourneys.tours, tour],
+          },
+        })),
+        
+      removeFeaturedTour: (tourId) =>
+        set((state) => ({
+          ...state,
+          featuredJourneys: {
+            ...state.featuredJourneys,
+            tours: state.featuredJourneys.tours.filter((tour) => tour.id !== tourId),
+          },
+        })),
+        
+      addBlogPost: (post) =>
+        set((state) => ({
+          ...state,
+          blog: {
+            ...state.blog,
+            posts: [...state.blog.posts, post],
+          },
+        })),
+        
+      removeBlogPost: (postId) =>
+        set((state) => ({
+          ...state,
+          blog: {
+            ...state.blog,
+            posts: state.blog.posts.filter((post) => post.id !== postId),
+          },
+        })),
+        
+      addTestimonial: (testimonial) =>
+        set((state) => ({
+          ...state,
+          testimonials: {
+            ...state.testimonials,
+            testimonials: [...state.testimonials.testimonials, testimonial],
+          },
+        })),
+        
+      removeTestimonial: (index) =>
+        set((state) => ({
+          ...state,
+          testimonials: {
+            ...state.testimonials,
+            testimonials: state.testimonials.testimonials.filter((_, i) => i !== index),
+          },
+        })),
+        
+      saveToServer: async () => {
+        set((state) => ({ ...state, isSaving: true }));
+        try {
+          const state = get();
+          const dataToSave = {
+            hero: state.hero,
+            featuredJourneys: state.featuredJourneys,
+            testimonials: state.testimonials,
+            blog: state.blog,
+            booking: state.booking,
+          };
+          
+          const response = await fetch(`${getBaseUrl()}/api/admin`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataToSave),
+          });
+          
+          if (!response.ok) {
+            throw new Error('Failed to save data');
+          }
+          
+          set((state) => ({ 
+            ...state, 
+            isSaving: false,
+            lastSaved: new Date().toISOString()
+          }));
+          return true;
+        } catch (error) {
+          console.error('Error saving data:', error);
+          set((state) => ({ ...state, isSaving: false }));
+          return false;
+        }
+      },
+      
+      loadFromServer: async () => {
+        set((state) => ({ ...state, isLoading: true }));
+        try {
+          const response = await fetch(`${getBaseUrl()}/api/admin`);
+          const result = await response.json();
+          
+          if (!response.ok || !result.data) {
+            throw new Error('Failed to load data');
+          }
+          
+          set((state) => ({ 
+            ...state,
+            hero: result.data.hero || state.hero,
+            featuredJourneys: result.data.featuredJourneys || state.featuredJourneys,
+            testimonials: result.data.testimonials || state.testimonials,
+            blog: result.data.blog || state.blog,
+            booking: result.data.booking || state.booking,
+            isLoading: false 
+          }));
+          return true;
+        } catch (error) {
+          console.error('Error loading data:', error);
+          set((state) => ({ ...state, isLoading: false }));
+          return false;
+        }
+      },
     }),
     {
-      name: "website-content-storage",
-    },
-  ),
-)
+      name: "website-content",
+      storage: {
+        getItem: async (name) => {
+          try {
+            const response = await fetch('/api/admin');
+            const result = await response.json();
+            return result.data;
+          } catch (error) {
+            console.error('Error loading from storage:', error);
+            return null;
+          }
+        },
+        setItem: async (name, value) => {
+          try {
+            await fetch(`${getBaseUrl()}/api/admin`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(value),
+            });
+          } catch (error) {
+            console.error('Error saving to storage:', error);
+          }
+        },
+        removeItem: () => {},
+      },
+    }
+  )
+);
