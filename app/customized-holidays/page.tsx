@@ -54,6 +54,7 @@ export default function CustomizedHolidaysPage() {
   ]
   return (
     <MainLayout>
+<<<<<<< HEAD
       {/* Enhanced Hero Section with Background Image and Animated Elements */}
       <section className="relative py-24 overflow-hidden">
         {/* Background */}
@@ -111,6 +112,28 @@ export default function CustomizedHolidaysPage() {
                 View Testimonials
                 <Star className="ml-2 h-5 w-5" />
               </Button>
+=======
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/customized-holidays.png" alt="Customized Holidays" fill className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-poppins text-white">
+              Customized <span className="text-yellow-400">Holidays</span>
+            </h1>
+            <p className="text-xl text-white mb-8 font-open-sans">
+              Your journey, your way. We create personalized travel experiences that match your dreams, preferences, and
+              budget. Every detail is crafted just for you.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Badge className="bg-yellow-400 text-black px-6 py-3 text-lg">Personalized Itineraries</Badge>
+              <Badge className="bg-red-600 text-white px-6 py-3 text-lg">Flexible Dates</Badge>
+              <Badge className="bg-yellow-400 text-black px-6 py-3 text-lg">Expert Planning</Badge>
+>>>>>>> a0439e471ef580cd061e69166606fb5d3c4e8c1d
             </div>
           </div>
         </div>

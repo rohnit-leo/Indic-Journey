@@ -39,9 +39,9 @@ export function BookingSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {/* Booking Form */}
-          <div>
+          <div className="lg:col-span-2">
             <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-sm">
               <CardHeader className="bg-gradient-to-r from-black to-gray-800 text-white rounded-t-lg">
                 <CardTitle className="text-xl font-bold font-['Poppins'] flex items-center">
@@ -162,6 +162,38 @@ export function BookingSection() {
                     Send Query
                   </Button>
                 </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Recent Blogs */}
+          <div className="space-y-5">
+            <Card className="shadow-xl border-0">
+              <CardHeader>
+                <CardTitle className="text-lg font-bold font-['Poppins']">Recent Blogs</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {[
+                  {
+                    title: "Golden Triangle Classic",
+                    excerpt: "Explore Delhi, Agra, and Jaipur",
+                    readTime: "5 min read",
+                  },
+                  { title: "Kerala Backwaters", excerpt: "Serene waters and lush landscapes", readTime: "4 min read" },
+                  { title: "Ladakh Adventure", excerpt: "High altitude mountain adventure", readTime: "6 min read" },
+                  { title: "Royal Rajasthan", excerpt: "Palaces and desert landscapes", readTime: "7 min read" },
+                ].map((blog, index) => (
+                  <div
+                    key={index}
+                    className="p-3 rounded-lg border-2 border-gray-200 hover:border-yellow-300 hover:bg-yellow-25 cursor-pointer transition-all duration-300"
+                  >
+                    <div>
+                      <h4 className="font-semibold text-black text-sm">{blog.title}</h4>
+                      <p className="text-xs text-gray-600">{blog.excerpt}</p>
+                      <div className="text-xs text-gray-500 mt-1">{blog.readTime}</div>
+                    </div>
+                  </div>
+                ))}
               </CardContent>
             </Card>
           </div>
