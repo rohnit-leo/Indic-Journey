@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -15,8 +15,22 @@ export default function AdminLoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true)
   const router = useRouter()
-
+    useEffect(() => {
+    // Check if already authenticated
+    if (typeof window !== "undefined") {
+      const authStatus = localStorage.getItem("admin_authenticated")
+      console.log("Login page - Auth status:", authStatus)
+      
+      if (authStatus === "true") {
+        // Already logged in, redirect to admin panel
+        console.log("Already authenticated, redirecting to admin...")
+        window.location.href = "/admin"
+      }
+      setIsCheckingAuth(false)
+    }
+  }, [router])
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
@@ -28,12 +42,26 @@ export default function AdminLoginPage() {
     if (password === "mayurindicjourneys") {
       // Store authentication in localStorage (in real app, use proper auth)
       localStorage.setItem("admin_authenticated", "true")
-      router.push("/admin")
+      console.log("Authentication successful, redirecting...")
+      window.location.href = "/admin"
     } else {
       setError("Invalid password. Please try again.")
     }
 
     setIsLoading(false)
+  }
+  // Show loading while checking authentication
+  if (isCheckingAuth) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-yellow-400 via-red-500 to-red-600 flex items-center justify-center p-4">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+            <div className="w-8 h-8 bg-white rounded-full"></div>
+          </div>
+          <p className="text-white">Checking authentication...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
