@@ -8,14 +8,16 @@ export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
-  useEffect(() => {
-    // Only execute this code in the browser
+  
   interface WindowWithLocalStorage extends Window {
     localStorage: Storage
   }
+    useEffect(() => {
+    // Only execute this code in the browser
     if (typeof window !== "undefined") {
       const win: WindowWithLocalStorage = window as WindowWithLocalStorage
-      const authStatus = win.localStorage.getItem("authStatus")
+      const authStatus = win.localStorage.getItem("admin_authenticated")
+      console.log("Admin page - Auth status:", authStatus)
       if (authStatus === "true") {
         setIsAuthenticated(true)
       } else {

@@ -10,14 +10,14 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Lock, User, Eye, EyeOff } from "lucide-react"
 
-export default function AdminLoginPage() {
-  const [password, setPassword] = useState("")
+export default function AdminLoginPage() {  const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [isCheckingAuth, setIsCheckingAuth] = useState(true)
   const router = useRouter()
-    useEffect(() => {
+  
+  useEffect(() => {
     // Check if already authenticated
     if (typeof window !== "undefined") {
       const authStatus = localStorage.getItem("admin_authenticated")
