@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { ComprehensiveAdmin } from "@/components/admin/comprehensive-admin"
+import { EnhancedAdminPanel } from "@/components/admin/enhanced-admin"
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -48,5 +48,5 @@ export default function AdminPage() {
     return null // Will redirect to login
   }
 
-  return <ComprehensiveAdmin />
+  return <EnhancedAdminPanel />
 }
