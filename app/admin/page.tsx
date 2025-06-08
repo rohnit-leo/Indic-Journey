@@ -2,24 +2,20 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { EnhancedAdminPanel } from "@/components/admin/enhanced-admin"
+import { ComprehensiveAdmin } from "@/components/admin/comprehensive-admin"
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
-  const router: ReturnType<typeof useRouter> = useRouter()
-  
+  const router = useRouter()
+  useEffect(() => {
+    // Only execute this code in the browser
   interface WindowWithLocalStorage extends Window {
     localStorage: Storage
   }
-  useEffect((): void => {
-    // Only execute this code in the browser
     if (typeof window !== "undefined") {
       const win: WindowWithLocalStorage = window as WindowWithLocalStorage
-      // Check authentication status
-      const authStatus: string | null = win.localStorage.getItem("admin_authenticated")
-      console.log("Auth status:", authStatus)
-      
+      const authStatus = win.localStorage.getItem("authStatus")
       if (authStatus === "true") {
         setIsAuthenticated(true)
       } else {
@@ -48,5 +44,5 @@ export default function AdminPage() {
     return null // Will redirect to login
   }
 
-  return <EnhancedAdminPanel />
+  return <ComprehensiveAdmin />
 }
