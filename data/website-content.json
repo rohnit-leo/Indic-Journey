@@ -25,6 +25,14 @@
           "accent": "Live the Adventure",
           "location": "Ladakh, Jammu & Kashmir",
           "link": "/tours/ladakh-adventure"
+        },
+        {
+          "title": "New Slide Title",
+          "subtitle": "New slide subtitle",
+          "image": "/placeholder.svg",
+          "accent": "New Accent",
+          "location": "Location",
+          "link": "/tours/new"
         }
       ]
     },
