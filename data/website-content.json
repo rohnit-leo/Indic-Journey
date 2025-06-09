@@ -3,7 +3,7 @@
     "hero": {
       "slides": [
         {
-          "title": "Explore. Experience. Evolve.",
+          "title": "",
           "subtitle": "Crafted Travel Stories across India & the World",
           "image": "/images/taj-mahal.png",
           "accent": "Discover Hidden Gems",
@@ -246,8 +246,8 @@
       ]
     },
     "isLoading": true,
-    "isSaving": false,
-    "lastSaved": null
+    "isSaving": true,
+    "lastSaved": "2025-06-09T09:49:46.633Z"
   },
   "version": 0
 }
