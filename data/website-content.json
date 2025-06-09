@@ -22,7 +22,7 @@
           "title": "Nature & Mountains",
           "subtitle": "Conquer the Highest Peaks & Scenic Landscapes",
           "image": "blob:https://v0-indic-journeys-website-design.vercel.app/e283440c-2856-465c-ad1a-62c283b8bf45",
-          "accent": "The Land of the T",
+          "accent": "The Land of the Th",
           "location": "Ladakh, Jammu & Kashmir",
           "link": "/tours/ladakh-adventure"
         }
@@ -246,7 +246,7 @@
       ]
     },
     "isLoading": false,
-    "isSaving": false,
+    "isSaving": true,
     "lastSaved": "2025-06-09T10:41:00.462Z"
   },
   "version": 0
