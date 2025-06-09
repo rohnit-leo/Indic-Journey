@@ -3,7 +3,7 @@
     "hero": {
       "slides": [
         {
-          "title": "Explore. Experience. Evolve.",
+          "title": "ajfhsadhfdsawhb",
           "subtitle": "Crafted Travel Stories across India & the World",
           "image": "/images/taj-mahal.png",
           "accent": "Discover Hidden Gems",
@@ -25,6 +25,14 @@
           "accent": "Live the Adventure",
           "location": "Ladakh, Jammu & Kashmir",
           "link": "/tours/ladakh-adventure"
+        },
+        {
+          "title": "New Slide Titlesaadadasdsaasd",
+          "subtitle": "New slide subtitleasdassaas",
+          "image": "/placeholder.svgasdasasasddas",
+          "accent": "New Accentasdasdasdasa",
+          "location": "Locationsdasdsas",
+          "link": "/tours/newasasasdasd"
         }
       ]
     },
@@ -247,7 +255,7 @@
     },
     "isLoading": true,
     "isSaving": false,
-    "lastSaved": null
+    "lastSaved": "2025-06-09T09:48:35.987Z"
   },
   "version": 0
 }
