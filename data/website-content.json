@@ -29,7 +29,7 @@
         {
           "title": "New Slide Titlesaadadasdsaasd",
           "subtitle": "New slide subtitleasdassaas",
-          "image": "/placeholder.svgasdasasasdd",
+          "image": "/placeholder.svgasdasasasddas",
           "accent": "New Accentasdasdasdasa",
           "location": "Locationsdasdsas",
           "link": "/tours/newasasasdasd"
@@ -254,8 +254,8 @@
       ]
     },
     "isLoading": false,
-    "isSaving": true,
-    "lastSaved": "2025-06-09T09:48:35.611Z"
+    "isSaving": false,
+    "lastSaved": "2025-06-09T09:48:35.987Z"
   },
   "version": 0
 }
