@@ -5,15 +5,15 @@
         {
           "title": "Explore. Experience. Evolve.",
           "subtitle": "Crafted Travel Stories across India & the World",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/940de299-6135-4d45-872f-446730363230",
+          "image": "/images/taj-mahal.png",
           "accent": "Discover Hidden Gems",
-          "location": "Tera Manzila Mandir, Rishikesh",
+          "location": "Taj Mahal, Agra",
           "link": "/tours/golden-triangle"
         },
         {
           "title": "Spiritual Journeys Await",
           "subtitle": "Connect with Ancient Wisdom & Sacred Places",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/20a6e5bb-3f75-4af1-bfdb-71de00145fad",
+          "image": "/images/varanasi-ganga.png",
           "accent": "Find Inner Peace",
           "location": "Varanasi, Uttar Pradesh",
           "link": "/tours/spiritual-varanasi"
@@ -245,7 +245,7 @@
         }
       ]
     },
-    "isLoading": false,
+    "isLoading": true,
     "isSaving": false,
     "lastSaved": null
   },
