@@ -33,14 +33,6 @@
           "accent": "New Accent",
           "location": "Location",
           "link": "/tours/new"
-        },
-        {
-          "title": "New Slide Title",
-          "subtitle": "New slide subtitle",
-          "image": "/placeholder.svg",
-          "accent": "New Accent",
-          "location": "Location",
-          "link": "/tours/new"
         }
       ]
     },
