@@ -246,7 +246,7 @@
       ]
     },
     "isLoading": false,
-    "isSaving": true,
+    "isSaving": false,
     "lastSaved": "2025-06-09T09:52:29.139Z"
   },
   "version": 0
