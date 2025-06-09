@@ -5,25 +5,25 @@
         {
           "title": "Explore. Experience. Evolve.",
           "subtitle": "Crafted Travel Stories across India & the World",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/940de299-6135-4d45-872f-446730363230",
+          "image": "/images/taj-mahal.png",
           "accent": "Discover Hidden Gems",
-          "location": "Tera Manzila Mandir, Rishikesh",
+          "location": "Taj Mahal, Agra",
           "link": "/tours/golden-triangle"
         },
         {
           "title": "Spiritual Journeys Await",
           "subtitle": "Connect with Ancient Wisdom & Sacred Places",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/20a6e5bb-3f75-4af1-bfdb-71de00145fad",
+          "image": "/images/varanasi-ganga.png",
           "accent": "Find Inner Peace",
           "location": "Varanasi, Uttar Pradesh",
           "link": "/tours/spiritual-varanasi"
         },
         {
-          "title": "Nature & Mountains",
+          "title": "Adventure & Mountains",
           "subtitle": "Conquer the Highest Peaks & Scenic Landscapes",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/ee6dcb7f-2150-42d4-9d2e-97997720e7d4",
-          "accent": "The Land of the Thunder Dragon",
-          "location": "Bhutan",
+          "image": "/images/ladakh-mountains.png",
+          "accent": "Live the Adventure",
+          "location": "Ladakh, Jammu & Kashmir",
           "link": "/tours/ladakh-adventure"
         }
       ]
@@ -34,89 +34,84 @@
       "tours": [
         {
           "id": "golden-triangle",
-          "title": "Do Dham (Kedarnath - Badrinath)",
-          "location": "Haridwar - Guptkashi - Kedarnath - Ukhimath - Badrinath - Rishikesh",
-          "duration": "07 Days",
-          "groupSize": "2-16 People",
-          "price": "₹22,999",
-          "originalPrice": "₹22,999",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/763a76b2-7116-4cde-87fc-b8259dd17fe3",
-          "category": "Spiritual",
+          "title": "Golden Triangle Classic",
+          "location": "Delhi - Agra - Jaipur",
+          "duration": "7 Days",
+          "groupSize": "2-15 People",
+          "price": "₹25,000",
+          "originalPrice": "₹30,000",
+          "image": "/images/taj-mahal.png",
+          "category": "Heritage",
           "rating": 4.8,
-          "reviews": 35,
+          "reviews": 156,
           "highlights": [
-            "Haridwar Ganga Aarti",
-            "Dev Prayag View Point",
-            "Kedarnath Trek",
-            "Mana Village",
-            "Rishikesh Rafting"
+            "Taj Mahal",
+            "Red Fort",
+            "Hawa Mahal",
+            "Amber Fort"
           ],
           "discount": "17% OFF",
           "enabled": true
         },
         {
           "id": "kerala",
-          "title": "Classic Kerala - Monsoon Special",
-          "location": "Kochi - Athirapilly - Munnar - Thekkady - Alleppey",
-          "duration": "07 Days",
-          "groupSize": "2-16 People",
-          "price": "₹19,999",
-          "originalPrice": "₹23,999",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/d7853b30-cbc0-4632-8027-5e1831ee8d27",
+          "title": "Kerala Backwaters",
+          "location": "Kochi - Alleppey - Munnar",
+          "duration": "6 Days",
+          "groupSize": "2-12 People",
+          "price": "₹22,000",
+          "originalPrice": "₹26,000",
+          "image": "/images/kerala-backwaters.png",
           "category": "Nature",
           "rating": 4.9,
-          "reviews": 56,
+          "reviews": 203,
           "highlights": [
-            "Athirapilly Falls",
+            "Houseboat Stay",
             "Tea Plantations",
             "Spice Gardens",
-            "Pattumalay Tea Factory",
-            "Alleppey Backwaters",
-            "Fort Kochi"
+            "Ayurveda"
           ],
           "discount": "15% OFF",
           "enabled": true
         },
         {
           "id": "ladakh",
-          "title": "Varanasi - The City of Lord Shiva",
-          "location": "Varanasi - Sarnath",
-          "duration": "05 Days",
-          "groupSize": "2-16 People",
-          "price": "₹14,999",
-          "originalPrice": "₹16,999",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/de9a12e7-c26f-4da2-b4e1-9d0a5f2fdff3",
-          "category": "Spiritual",
+          "title": "Ladakh Adventure",
+          "location": "Leh - Nubra - Pangong",
+          "duration": "8 Days",
+          "groupSize": "4-16 People",
+          "price": "₹35,000",
+          "originalPrice": "₹42,000",
+          "image": "/images/ladakh-mountains.png",
+          "category": "Adventure",
           "rating": 4.7,
-          "reviews": 27,
+          "reviews": 89,
           "highlights": [
-            "Kashi Vishwanath Corridor",
-            "Sarnath",
-            "Sankat Mochan Temple",
-            "Ghats of Varanasi"
+            "Khardung La",
+            "Pangong Lake",
+            "Monasteries",
+            "Desert Safari"
           ],
           "discount": "17% OFF",
           "enabled": true
         },
         {
           "id": "varanasi",
-          "title": "Sri Lanka - The Ramayana Trail",
-          "location": "Colombo - Sigiriya - Dambulla - Trinacomalee - Ella - Nuwara Eliya",
-          "duration": "06 Days",
-          "groupSize": "2-16 People",
-          "price": "₹74,999",
-          "originalPrice": "₹79,999",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/02b70167-9d4d-4b03-84d1-13d2eaa6224f",
-          "category": "Heritage",
+          "title": "Spiritual Varanasi",
+          "location": "Varanasi - Sarnath",
+          "duration": "4 Days",
+          "groupSize": "2-20 People",
+          "price": "₹15,000",
+          "originalPrice": "₹18,000",
+          "image": "/images/varanasi-ganga.png",
+          "category": "Spiritual",
           "rating": 4.6,
-          "reviews": 21,
+          "reviews": 124,
           "highlights": [
-            "Muneshwaram Temple",
-            "Sigiriya Rock Fortress",
-            "Koneswaram Temple",
-            "Seetha Amman Temple",
-            "Ashok Vatika",
-            "Panchamuga Anjaneyar Temple"
+            "Ganga Aarti",
+            "Temple Tours",
+            "Boat Rides",
+            "Meditation"
           ],
           "discount": "17% OFF",
           "enabled": true
@@ -250,9 +245,9 @@
         }
       ]
     },
-    "isLoading": false,
+    "isLoading": true,
     "isSaving": false,
-    "lastSaved": "2025-06-09T10:41:17.053Z"
+    "lastSaved": null
   },
   "version": 0
 }
