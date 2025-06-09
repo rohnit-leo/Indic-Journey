@@ -5,25 +5,25 @@
         {
           "title": "Explore. Experience. Evolve.",
           "subtitle": "Crafted Travel Stories across India & the World",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/940de299-6135-4d45-872f-446730363230",
+          "image": "/images/taj-mahal.png",
           "accent": "Discover Hidden Gems",
-          "location": "Tera Manzila Mandir, Rishikesh",
+          "location": "Taj Mahal, Agra",
           "link": "/tours/golden-triangle"
         },
         {
           "title": "Spiritual Journeys Await",
           "subtitle": "Connect with Ancient Wisdom & Sacred Places",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/20a6e5bb-3f75-4af1-bfdb-71de00145fad",
+          "image": "/images/varanasi-ganga.png",
           "accent": "Find Inner Peace",
           "location": "Varanasi, Uttar Pradesh",
           "link": "/tours/spiritual-varanasi"
         },
         {
-          "title": "Nature & Mountains",
+          "title": "Adventure & Mountains",
           "subtitle": "Conquer the Highest Peaks & Scenic Landscapes",
-          "image": "blob:https://v0-indic-journeys-website-design.vercel.app/ee6dcb7f-2150-42d4-9d2e-97997720e7d4",
-          "accent": "The Land of the Thunder Dragon",
-          "location": "Bhutan",
+          "image": "/images/ladakh-mountains.png",
+          "accent": "Live the Adventure",
+          "location": "Ladakh, Jammu & Kashmir",
           "link": "/tours/ladakh-adventure"
         }
       ]
@@ -245,9 +245,9 @@
         }
       ]
     },
-    "isLoading": false,
+    "isLoading": true,
     "isSaving": false,
-    "lastSaved": "2025-06-09T10:41:17.053Z"
+    "lastSaved": null
   },
   "version": 0
 }
