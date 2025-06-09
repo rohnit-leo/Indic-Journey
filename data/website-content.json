@@ -27,7 +27,7 @@
           "link": "/tours/ladakh-adventure"
         },
         {
-          "title": "New Slide Title",
+          "title": "New Slide Titles",
           "subtitle": "New slide subtitle",
           "image": "/placeholder.svg",
           "accent": "New Accent",
@@ -254,7 +254,7 @@
       ]
     },
     "isLoading": false,
-    "isSaving": false,
+    "isSaving": true,
     "lastSaved": "2025-06-09T09:48:24.597Z"
   },
   "version": 0
