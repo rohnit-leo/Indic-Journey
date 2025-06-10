@@ -11,19 +11,19 @@
           "link": "/tours/golden-triangle"
         },
         {
-          "title": "Spiritual Journeys Await",
-          "subtitle": "Connect with Ancient Wisdom & Sacred Places",
-          "image": "/images/varanasi-ganga.png",
-          "accent": "Find Inner Peace",
+          "title": "In Search of Moksh",
+          "subtitle": "Explore the City of the God of Gods",
+          "image": "/images/varanasi-ghat.jpg",
+          "accent": "Faith Worship Salvation",
           "location": "Varanasi, Uttar Pradesh",
           "link": "/tours/spiritual-varanasi"
         },
         {
-          "title": "Adventure & Mountains",
-          "subtitle": "Conquer the Highest Peaks & Scenic Landscapes",
-          "image": "/images/ladakh-mountains.png",
-          "accent": "Live the Adventure",
-          "location": "Ladakh, Jammu & Kashmir",
+          "title": "Nature, Mountains, Monastaries",
+          "subtitle": "Country of Gross National Happiness",
+          "image": "/images/thimphu-bhutan.jpg",
+          "accent": "Explore the land of the Thunder Dragon",
+          "location": "Thimphu, Bhutan",
           "link": "/tours/ladakh-adventure"
         }
       ]
