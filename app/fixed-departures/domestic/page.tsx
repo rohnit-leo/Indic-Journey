@@ -1,12 +1,8 @@
-import { MainLayout } from "@/components/main-layout"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { MapPin, Calendar, Users, Star, ArrowRight } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
+import { redirect } from "next/navigation"
 
-export default function DomesticFixedDeparturesPage() {
+export default function DomesticToursPage() {
+  redirect("/fixed-departures")
+}
   const domesticTours = [
     {
       id: "golden-triangle",
