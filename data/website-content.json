@@ -24,6 +24,14 @@
           "accent": "Explore the land of the Thunder Dragon",
           "location": "Thimphu, Bhutan",
           "link": "/tours/ladakh-adventure"
+        },
+        {
+          "title": "Cambodia",
+          "subtitle": "Explore the Angkor Marvels",
+          "image": "/images/angkor-wat.jpg",
+          "accent": "Indic Culture beyond India",
+          "location": "Angkor Temple Complex, Cambodia",
+          "link": "/tours/cambodia-heritage"
         }
       ]
     },
