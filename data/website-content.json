@@ -16,13 +16,12 @@
           "accent": "Faith Worship Salvation",
           "location": "Varanasi, Uttar Pradesh",
           "link": "/tours/spiritual-varanasi"
-        },
-        {
-          "title": " & Mounins",
-          "subtitle": "Conquer the Highest Peaks & Scenic Landscapes",
-          "image": "/images/ladakh-mountains.png",
-          "accent": "Live the Adventure",
-          "location": "Ladakh, Jammu & Kashmir",
+        },        {
+          "title": "Nature, Mountains, Monastaries",
+          "subtitle": "Country of Gross National Happiness",
+          "image": "/images/thimphu-bhutan.jpg",
+          "accent": "Explore the land of the Thunder Dragon",
+          "location": "Thimphu, Bhutan",
           "link": "/tours/ladakh-adventure"
         }
       ]
