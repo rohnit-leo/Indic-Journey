@@ -19,7 +19,7 @@
           "link": "/tours/spiritual-varanasi"
         },
         {
-          "title": " & Mounins",
+          "title": "Adventure & Mountains",
           "subtitle": "Conquer the Highest Peaks & Scenic Landscapes",
           "image": "/images/ladakh-mountains.png",
           "accent": "Live the Adventure",
@@ -245,7 +245,7 @@
         }
       ]
     },
-    "isLoading": false,
+    "isLoading": true,
     "isSaving": false,
     "lastSaved": null
   },
