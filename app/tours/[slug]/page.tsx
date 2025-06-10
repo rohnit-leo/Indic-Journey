@@ -20,6 +20,7 @@ import {
   Heart,
 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function TourDetailPage({ params }: { params: { slug: string } }) {
   // This would normally fetch data based on the slug
