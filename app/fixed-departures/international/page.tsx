@@ -1,8 +1,12 @@
-import { redirect } from "next/navigation"
+import { MainLayout } from "@/components/main-layout"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { MapPin, Calendar, Users, Star, ArrowRight, Plane } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
 
-export default function InternationalToursPage() {
-  redirect("/fixed-departures")
-}
+export default function InternationalFixedDeparturesPage() {
   const internationalTours = [
     {
       id: "europe-classic",

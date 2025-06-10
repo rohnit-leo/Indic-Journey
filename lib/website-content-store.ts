@@ -153,7 +153,14 @@ const initialState: WebsiteContentState = {
 };
 
 // Add a helper function to get the base URL
-const getBaseUrl = () => process.env.NEXT_PUBLIC_API_BASE_URL || '';
+const getBaseUrl = () => {
+  if (typeof window !== 'undefined') {
+    // Browser environment
+    return window.location.origin;
+  }
+  // Server environment
+  return process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000';
+};
 
 export const useWebsiteContent = create<WebsiteContentState>()(
   persist(
@@ -525,11 +532,10 @@ export const useWebsiteContent = create<WebsiteContentState>()(
       },
     }),
     {
-      name: "website-content",
-      storage: {
+      name: "website-content",      storage: {
         getItem: async (name) => {
           try {
-            const response = await fetch('/api/admin');
+            const response = await fetch(`${getBaseUrl()}/api/admin`);
             const result = await response.json();
             return result.data;
           } catch (error) {

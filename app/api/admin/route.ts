@@ -1,21 +1,41 @@
 import { NextResponse } from 'next/server';
-import { readData, writeData } from '../storage-bridge';
+import path from 'path';
+import { promises as fsPromises } from 'fs';
+
+// Path to our data file
+const dataFilePath = path.join(process.cwd(), 'data', 'website-content.json');
+
+// Ensure the data directory exists
+const ensureDirectoryExists = async () => {
+  const dataDir = path.join(process.cwd(), 'data');
+  try {
+    await fsPromises.access(dataDir);
+  } catch (error) {
+    // Directory doesn't exist, create it
+    await fsPromises.mkdir(dataDir, { recursive: true });
+  }
+};
 
 // GET handler to fetch the website content
 export async function GET() {
   try {
-    console.log('GET request received to fetch website content');
-    const parsedData = await readData();
-    
-    if (parsedData === null) {
-      console.log('No data found, returning empty response');
+    await ensureDirectoryExists();
+
+    // Check if file exists
+    try {
+      await fsPromises.access(dataFilePath);
+    } catch (error) {
+      // If file doesn't exist, return empty data
       return NextResponse.json({
         message: 'No data found',
         data: null
       });
     }
 
-    console.log('Data fetched successfully');
+    // Read the file
+    const data = await fsPromises.readFile(dataFilePath, 'utf8');
+    const parsedData = JSON.parse(data);
+
     return NextResponse.json({
       message: 'Data fetched successfully',
       data: parsedData
@@ -32,23 +52,20 @@ export async function GET() {
 // POST handler to save the website content
 export async function POST(request: Request) {
   try {
-    console.log('POST request received to save website content');
+    await ensureDirectoryExists();
     const data = await request.json();
 
     // Validate data
     if (!data) {
-      console.log('No data provided in request');
       return NextResponse.json(
         { message: 'No data provided' },
         { status: 400 }
       );
     }
 
-    // Save the data
-    console.log('Saving website content');
-    await writeData(data);
+    // Save the data to the file
+    await fsPromises.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf8');
 
-    console.log('Data saved successfully');
     return NextResponse.json({
       message: 'Data saved successfully',
       data

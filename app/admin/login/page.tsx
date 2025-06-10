@@ -10,8 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Lock, User, Eye, EyeOff } from "lucide-react"
 
-export default function AdminLoginPage() {
-  const [password, setPassword] = useState("")
+export default function AdminLoginPage() {  const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -22,14 +21,16 @@ export default function AdminLoginPage() {
     // Check if already authenticated
     if (typeof window !== "undefined") {
       const authStatus = localStorage.getItem("admin_authenticated")
+      console.log("Login page - Auth status:", authStatus)
+      
       if (authStatus === "true") {
         // Already logged in, redirect to admin panel
-        router.push("/admin")
+        console.log("Already authenticated, redirecting to admin...")
+        window.location.href = "/admin"
       }
       setIsCheckingAuth(false)
     }
   }, [router])
-
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
@@ -41,7 +42,8 @@ export default function AdminLoginPage() {
     if (password === "mayurindicjourneys") {
       // Store authentication in localStorage (in real app, use proper auth)
       localStorage.setItem("admin_authenticated", "true")
-      router.push("/admin")
+      console.log("Authentication successful, redirecting...")
+      window.location.href = "/admin"
     } else {
       setError("Invalid password. Please try again.")
     }

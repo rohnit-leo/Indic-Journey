@@ -21,9 +21,14 @@ export function Header() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },    {
+    { name: "About", href: "/about" },
+    {
       name: "Fixed Departures",
       href: "/fixed-departures",
+      submenu: [
+        { name: "Domestic Tours", href: "/fixed-departures/domestic" },
+        { name: "International Tours", href: "/fixed-departures/international" },
+      ],
     },
     {
       name: "Customized Holidays",

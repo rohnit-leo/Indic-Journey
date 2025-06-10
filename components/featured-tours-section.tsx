@@ -155,7 +155,7 @@ export function FeaturedToursSection() {
                   </div>
                 </div>
 
-                <Link href={`/tours/${tour.title.toLowerCase().replace(/\s+/g, "-")}`}>
+                <Link href={`/tours/${tour.id || tour.title.toLowerCase().replace(/\s+/g, "-")}`}>
                   <Button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold group/btn">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />

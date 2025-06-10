@@ -11,21 +11,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 export default function FixedDeparturesPage() {
   const tours = [
     {
-      id: "do-dham-kedarnath-badrinath",
-      title: "Do Dham (Kedarnath - Badrinath)",
-      location: "Haridwar - Kedarnath - Badrinath",
-      duration: "6 Days",
-      groupSize: "4-18 People",
-      price: "₹28,000",
-      originalPrice: "₹34,000",
-      image: "/images/kedarnath-temple.png",
-      category: "Pilgrimage",
-      rating: 4.9,
-      reviews: 124,
-      highlights: ["Kedarnath Temple", "Badrinath Temple", "Haridwar Ganga Aarti", "Valley of Flowers"],
-      discount: "18% OFF",
-    },
-    {
       id: "golden-triangle",
       title: "Golden Triangle Classic",
       location: "Delhi - Agra - Jaipur",
@@ -39,6 +24,7 @@ export default function FixedDeparturesPage() {
       reviews: 156,
       highlights: ["Taj Mahal", "Red Fort", "Hawa Mahal", "Amber Fort"],
       discount: "17% OFF",
+      type: "domestic",
     },
     {
       id: "kerala-backwaters",
@@ -54,6 +40,7 @@ export default function FixedDeparturesPage() {
       reviews: 203,
       highlights: ["Houseboat Stay", "Tea Plantations", "Spice Gardens", "Ayurveda"],
       discount: "15% OFF",
+      type: "domestic",
     },
     {
       id: "ladakh-adventure",
@@ -69,6 +56,7 @@ export default function FixedDeparturesPage() {
       reviews: 89,
       highlights: ["Khardung La", "Pangong Lake", "Monasteries", "Desert Safari"],
       discount: "17% OFF",
+      type: "domestic",
     },
     {
       id: "rajasthan-royal",
@@ -84,6 +72,7 @@ export default function FixedDeparturesPage() {
       reviews: 215,
       highlights: ["Palace Stays", "Desert Safari", "Cultural Shows", "Traditional Cuisine"],
       discount: "17% OFF",
+      type: "domestic",
     },
     {
       id: "europe-classic",
@@ -99,8 +88,9 @@ export default function FixedDeparturesPage() {
       reviews: 142,
       highlights: ["Eiffel Tower", "Colosseum", "Big Ben", "Canal Cruise"],
       discount: "17% OFF",
+      type: "international",
     },
-  {
+    {
       id: "southeast-asia",
       title: "Southeast Asia Explorer",
       location: "Thailand - Singapore - Malaysia",
@@ -114,9 +104,10 @@ export default function FixedDeparturesPage() {
       reviews: 98,
       highlights: ["Bangkok Temples", "Marina Bay", "Petronas Towers", "Island Hopping"],
       discount: "15% OFF",
+      type: "international",
     },
-  ];
-  
+  ]
+
   return (
     <MainLayout>
       {/* Hero Section */}
@@ -136,9 +127,16 @@ export default function FixedDeparturesPage() {
               the company of fellow explorers.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Badge className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 text-lg cursor-pointer">
-                Explore Our Tours
-              </Badge>
+              <Link href="/fixed-departures/domestic">
+                <Badge className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 text-lg cursor-pointer">
+                  Domestic Tours
+                </Badge>
+              </Link>
+              <Link href="/fixed-departures/international">
+                <Badge className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-lg cursor-pointer">
+                  International Tours
+                </Badge>
+              </Link>
             </div>
           </div>
         </div>
@@ -155,13 +153,11 @@ export default function FixedDeparturesPage() {
             <div className="flex flex-wrap gap-4 w-full md:w-auto">
               <Select>
                 <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Category" />
+                  <SelectValue placeholder="Type" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="pilgrimage">Pilgrimage</SelectItem>
-                  <SelectItem value="heritage">Heritage</SelectItem>
-                  <SelectItem value="nature">Nature</SelectItem>
-                  <SelectItem value="adventure">Adventure</SelectItem>
+                  <SelectItem value="domestic">Domestic</SelectItem>
+                  <SelectItem value="international">International</SelectItem>
                 </SelectContent>
               </Select>
               <Select>
@@ -269,8 +265,8 @@ export default function FixedDeparturesPage() {
                       ))}
                     </div>
                   </div>
-                  
-                  <Link href={`/fixed-departures/${tour.id}`}>
+
+                  <Link href={`/fixed-departures/${tour.type}/${tour.id}`}>
                     <Button className="w-full bg-gradient-to-r from-yellow-400 to-red-600 hover:from-yellow-500 hover:to-red-700 text-black hover:text-white font-semibold group/btn">
                       View Details
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
