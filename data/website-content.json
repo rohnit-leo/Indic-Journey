@@ -253,7 +253,7 @@
         }
       ]
     },
-    "isLoading": true,
+    "isLoading": false,
     "isSaving": false,
     "lastSaved": null
   },
