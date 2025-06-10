@@ -1,11 +1,10 @@
 {
   "state": {
     "hero": {
-      "slides": [
-        {
+      "slides": [        {
           "title": "Dev Bhoomi Uttarakhand",
           "subtitle": "Enchanting Experiences on this Spiritual Canvas",
-          "image": "images\tera-manzila-mandir.jpg",
+          "image": "/images/tera-manzila-mandir-rishikesh.jpg",
           "accent": "Experience the Divine",
           "location": "Tera Manzila Mandir, Rishikesh",
           "link": "/tours/golden-triangle"
@@ -25,6 +24,14 @@
           "accent": "Live the Adventure",
           "location": "Ladakh, Jammu & Kashmir",
           "link": "/tours/ladakh-adventure"
+        },
+        {
+          "title": "New Slide Title",
+          "subtitle": "New slide subtitle",
+          "image": "/placeholder.svg",
+          "accent": "New Accent",
+          "location": "Location",
+          "link": "/tours/new"
         }
       ]
     },
@@ -247,7 +254,7 @@
     },
     "isLoading": false,
     "isSaving": false,
-    "lastSaved": null
+    "lastSaved": "2025-06-10T09:15:08.821Z"
   },
   "version": 0
 }
